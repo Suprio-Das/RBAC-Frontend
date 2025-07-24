@@ -1,7 +1,14 @@
+import { useState } from "react";
+
 const Signup = () => {
+    const [newUser, setNewUser] = useState(null);
     const handleSignup = (e) => {
         e.preventDefault();
-        console.log("Form Submitted")
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        setNewUser({ name, email, password })
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
