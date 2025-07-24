@@ -1,9 +1,13 @@
 const Signup = () => {
+    const handleSignup = (e) => {
+        e.preventDefault();
+        console.log("Form Submitted")
+    }
     return (
         <div className="min-h-screen flex justify-center items-center">
             <div>
                 <h1 className="text-3xl text-center font-bold">Signup</h1>
-                <form action="">
+                <form onSubmit={handleSignup}>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Name:</legend>
                         <input type="text" className="input" placeholder="Type here" name="name" />
