@@ -1,6 +1,29 @@
+import { useState } from "react";
+
 const Login = () => {
+    const [currentUser, setCurrentUser] = useState(null);
     const handleLogin = (e) => {
         e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        setCurrentUser({ email, password })
+
+        fetch('http://localhost:4000/register', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(currentUser)
+        })
+            .then(data => {
+                if (data.status === 'Ok') {
+                    alert('User logged in');
+                }
+            })
+            .catch(error => {
+                alert(error.message)
+            })
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
