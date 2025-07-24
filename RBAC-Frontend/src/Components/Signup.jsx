@@ -9,6 +9,22 @@ const Signup = () => {
         const email = form.email.value;
         const password = form.password.value;
         setNewUser({ name, email, password })
+
+        fetch('http://localhost:4000/register', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newUser)
+        })
+            .then(data => {
+                if (data.status === 'Ok') {
+                    alert('User created');
+                }
+            })
+            .catch(error => {
+                alert(error.message)
+            })
     }
     return (
         <div className="min-h-screen flex justify-center items-center">

@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 import Signup from './Components/Signup'
 
@@ -5,7 +6,11 @@ function App() {
 
   return (
     <>
-      <Signup></Signup>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/register' element={<Signup></Signup>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
