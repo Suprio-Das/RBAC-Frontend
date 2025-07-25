@@ -4,3 +4,5 @@
 - Node JS
 - Express JS
 - MongoDB
+- Mongoose
+- Dotenv
