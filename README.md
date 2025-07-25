@@ -8,3 +8,4 @@
 - Dotenv
 - JWT
 - Bcrypt
+- Nodemon
