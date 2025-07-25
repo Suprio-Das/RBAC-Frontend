@@ -6,3 +6,5 @@
 - MongoDB
 - Mongoose
 - Dotenv
+- JWT
+- Bcrypt
