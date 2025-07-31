@@ -45,7 +45,7 @@ const Signup = () => {
                         <input type="password" className="input" placeholder="Type here" name="password" />
                     </fieldset>
                     <button className="btn btn-info w-full my-2">Signup</button>
-                    <p>Already have an account? <Link to='/login'>Login</Link></p>
+                    <p>Already have an account? <Link to='/login' className="text-orange-400 font-semibold">Login</Link></p>
                 </form>
             </div>
         </div>
