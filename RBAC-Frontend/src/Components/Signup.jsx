@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Signup = () => {
     const [newUser, setNewUser] = useState(null);
@@ -44,6 +45,7 @@ const Signup = () => {
                         <input type="password" className="input" placeholder="Type here" name="password" />
                     </fieldset>
                     <button className="btn btn-info w-full my-2">Signup</button>
+                    <p>Already have an account? <Link to='/login'>Login</Link></p>
                 </form>
             </div>
         </div>
