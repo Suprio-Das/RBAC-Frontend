@@ -12,9 +12,13 @@ const Signup = () => {
         const password = form.password.value;
         setNewUser({ name, email, password })
 
-        const request = await post('/api/auth/register', newUser);
-        const response = request.data;
-        console.log(response);
+        try {
+            const request = await post('/api/auth/register', newUser);
+            const response = request.data;
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
