@@ -20,7 +20,6 @@ axios.interceptors.request.use(function (config) {
     // Do something with request error
     return Promise.reject(error);
 },
-    { synchronous: true, runWhen: () => /* This function returns true */}
 );
 
 // Add a response interceptor

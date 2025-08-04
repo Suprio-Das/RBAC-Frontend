@@ -1,30 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { post } from "../Services/ApiEndPoints";
 
 const Login = () => {
     const [currentUser, setCurrentUser] = useState(null);
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         setCurrentUser({ email, password })
 
-        fetch('http://localhost:4000/register', {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(currentUser)
-        })
-            .then(data => {
-                if (data.status === 'Ok') {
-                    alert('User logged in');
-                }
-            })
-            .catch(error => {
-                alert(error.message)
-            })
+        const request = await post('/api/auth/login', currentUser);
+        const response = request.data;
+        console.log(response);
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
