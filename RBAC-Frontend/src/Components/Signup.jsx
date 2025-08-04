@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { post } from "../Services/ApiEndPoints";
 
 const Signup = () => {
     const [newUser, setNewUser] = useState(null);
-    const handleSignup = (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         setNewUser({ name, email, password })
+
+        const request = await post('/api/auth/register', newUser);
+        const response = request.data;
+        console.log(response);
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
