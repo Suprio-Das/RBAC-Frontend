@@ -18,3 +18,4 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 <br>
 - Access Dashboard
 - View Users
+- Update Users Role
