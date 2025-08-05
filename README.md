@@ -12,3 +12,11 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 - Nodemon
 - Axios
 - Axios Interceptors
+
+### Features: 
+**Admin Features:**
+<br>
+- Access Dashboard
+- View Users
+- Update Users Role
+- Delete Users
