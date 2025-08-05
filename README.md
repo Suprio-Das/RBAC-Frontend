@@ -17,3 +17,4 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 **Admin Features:**
 <br>
 - Access Dashboard
+- View Users
