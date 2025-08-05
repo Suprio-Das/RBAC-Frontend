@@ -19,3 +19,4 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 - Access Dashboard
 - View Users
 - Update Users Role
+- Delete Users
