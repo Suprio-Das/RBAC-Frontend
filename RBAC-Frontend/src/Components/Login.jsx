@@ -1,19 +1,29 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import { post } from "../Services/ApiEndPoints";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-    const [currentUser, setCurrentUser] = useState(null);
     const handleLogin = async (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        setCurrentUser({ email, password })
+        const payload = { email, password };
 
-        const request = await post('/api/auth/login', currentUser);
-        const response = request.data;
-        console.log(response);
+        try {
+            const request = await post('/api/auth/login', { email, password });
+            console.log(request);
+            const response = request;
+            if (response.status === 200) {
+                toast.success('Log in Successfull');
+                console.log(response);
+            }
+        } catch (error) {
+            const err = await error.response;
+            if (err) {
+                toast.error(err.data.message);
+            }
+        }
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
