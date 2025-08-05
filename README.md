@@ -14,3 +14,6 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 - Axios Interceptors
 
 ### Features: 
+**Admin Features:**
+<br>
+- Access Dashboard
