@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { post } from "../Services/ApiEndPoints";
 import toast from "react-hot-toast";
 
 const Signup = () => {
+    const navigate = useNavigate();
     const handleSignup = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -16,6 +16,7 @@ const Signup = () => {
             const request = await post('/api/auth/register', payload);
             if (request.status) {
                 toast.success("User Registration Successfull")
+                navigate('/login');
             }
         } catch (error) {
             toast.error(error.response.data.message);
