@@ -1,23 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { post } from "../Services/ApiEndPoints";
+import toast from "react-hot-toast";
 
 const Signup = () => {
-    const [newUser, setNewUser] = useState(null);
     const handleSignup = async (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        setNewUser({ name, email, password })
+        const payload = { name, email, password };
 
         try {
-            const request = await post('/api/auth/register', newUser);
-            const response = request.data;
-            console.log(response);
+            const request = await post('/api/auth/register', payload);
+            if (request.status) {
+                toast.success("User Registration Successfull")
+            }
         } catch (error) {
-            console.log(error);
+            toast.error(error.response.data.message);
         }
     }
     return (
