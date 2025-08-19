@@ -20,7 +20,6 @@ const Login = () => {
             if (response.status === 200) {
                 toast.success('Log in Successfull');
                 dispatch(SetUser(response.data.user))
-                console.log(response.data.user)
             }
         } catch (error) {
             const err = await error.response;
