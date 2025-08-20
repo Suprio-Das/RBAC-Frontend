@@ -5,6 +5,7 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 - React
 - Axios
 - Axios Interceptors
+- Redux Toolkit
 
 ### Features: 
 **Admin Features:**
