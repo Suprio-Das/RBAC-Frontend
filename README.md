@@ -6,6 +6,7 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 - Axios
 - Axios Interceptors
 - Redux Toolkit
+- Redux Persist
 
 ### Features: 
 **Admin Features:**
