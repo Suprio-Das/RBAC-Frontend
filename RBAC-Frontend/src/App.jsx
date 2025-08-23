@@ -18,9 +18,11 @@ function App() {
           <Route path='/' element={<PublicLayout />}>
             <Route index element={<Home></Home>}></Route>
           </Route>
+
           <Route path='/admin' element={<AdminLayouts></AdminLayouts>}>
             <Route index element={<Admin></Admin>}></Route>
           </Route>
+
           <Route path='/register' element={<Signup></Signup>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
         </Routes>
