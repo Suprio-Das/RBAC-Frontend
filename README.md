@@ -3,16 +3,10 @@ This repository is a part of my MERN recap session. In this, I have practiced th
 <br><br>
 **Tools:**
 - React
-- Node JS
-- Express JS
-- MongoDB
-- Mongoose
-- Dotenv
-- JWT
-- Bcrypt
-- Nodemon
 - Axios
 - Axios Interceptors
+- Redux Toolkit
+- Redux Persist
 
 ### Features: 
 **Admin Features:**
