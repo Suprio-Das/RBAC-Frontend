@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SetUser } from "../Redux/AuthSlice";
 
 const Login = () => {
-    const naviagate = useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -19,7 +19,9 @@ const Login = () => {
             console.log(request);
             const response = request;
             if (response.status === 200) {
-                console.log(response)
+                if (response.data.user.role === 'admin') {
+                    navigate('/admin')
+                }
                 toast.success('Log in Successfull');
                 dispatch(SetUser(response.data.user))
             }
