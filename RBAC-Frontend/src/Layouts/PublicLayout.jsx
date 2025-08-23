@@ -1,9 +1,10 @@
 import React from 'react';
+import { Outlet } from 'react-router';
 
 const PublicLayout = () => {
     return (
         <div>
-            <h1>Public Layout</h1>
+            <Outlet></Outlet>
         </div>
     );
 };
