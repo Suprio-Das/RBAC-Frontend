@@ -21,6 +21,8 @@ const Login = () => {
             if (response.status === 200) {
                 if (response.data.user.role === 'admin') {
                     navigate('/admin')
+                } else if (response.data.user.role === 'user') {
+                    navigate('/')
                 }
                 toast.success('Log in Successfull');
                 dispatch(SetUser(response.data.user))
