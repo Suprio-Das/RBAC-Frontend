@@ -1,10 +1,11 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { post } from "../Services/ApiEndPoints";
 import { toast } from "react-hot-toast";
 import { useSelector, useDispatch } from 'react-redux'
 import { SetUser } from "../Redux/AuthSlice";
 
 const Login = () => {
+    const naviagate = useNavigate();
     const dispatch = useDispatch();
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -18,6 +19,7 @@ const Login = () => {
             console.log(request);
             const response = request;
             if (response.status === 200) {
+                console.log(response)
                 toast.success('Log in Successfull');
                 dispatch(SetUser(response.data.user))
             }
